@@ -1,0 +1,162 @@
+/*Importacion de la Fuente*/
+@font-face {
+    font-family: "Sundays";
+    src: url("sundays.otf") format("truetype");
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: "Time New" 'Times New Roman', Times, serif;
+
+    background: url('fondo.jpg') no-repeat center center fixed;
+    background-size: cover;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*Efecto Vidriado*/
+.container-box {
+    width: 380px;
+    padding: 25px;
+    text-align: center; 
+    font-size: 20px;
+    background: rgba(0, 255, 229, 0.1);
+    border-radius: 20px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    color: rgb(0, 0, 0);
+}
+
+.titulo {
+    color: rgba(57, 1, 1, 0.9);
+    font-size: 80px;
+    font-family: "Sundays", sans-serif;
+     margin-top: 0;
+    margin-bottom: 5px;
+}
+
+.titulo-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;        /* separación entre título y logo */
+    margin-bottom: 10px;  /* espacio hacia abajo */
+}
+
+/*Union del titulo y el logo*/
+.titulo-logo .logo {
+    width: 80px;      /* ajusta el tamaño que quieras */
+    height: auto;
+    border-radius: 93px;
+}
+
+/* Botones*/
+.btn {
+    width: 50%;
+    padding: 15px;
+    margin: 8px 0;
+    border-radius: 50px;
+    border: none;
+    background: rgb(255, 0, 255);
+    color: black;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: rgb(10, 218, 215);
+}
+
+/* ---------------- HAMBURGUESA ---------------- */
+.hamburger {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+.hamburger div {
+    width: 35px;
+    height: 4px;
+    background: rgb(0, 0, 0);
+    margin: 6px 0;
+    border-radius: 3px;
+    transition: 0.3s;
+    box-shadow: 0 0 5px black;
+}
+
+/* ---------------- MENÚ DESPLEGABLE ---------------- */
+.side-menu {
+    position: fixed;
+    top: 0;
+    left: -300px;
+    width: 260px;
+    height: 100%;
+
+    /* ✨ GLASS EFFECT AGREGADO */
+    background: rgba(255, 255, 255, 0.01);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+
+    border-right: 2px solid rgba(255, 255, 255, 0.3);
+
+    box-shadow: 3px 0 20px rgba(0,0,0,0.4);
+
+    padding-top: 60px;
+    transition: 0.4s;
+    z-index: 999;
+}
+
+/* Menú abierto */
+.side-menu.open {
+    left: 0;
+}
+
+/* Botones del menú */
+.menu-btn {
+    width: 85%;
+    margin: 12px auto;
+    display: block;
+
+    padding: 14px;
+
+    /* Color + redondeado */
+    background: rgba(37, 226, 128, 0.7);
+    color: black;
+    border: none;
+    border-radius: 15px;
+
+    font-size: 15px;
+    text-align: left;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.menu-btn:hover {
+    background: rgba(255, 255, 255, 0.9);
+}
+
+/* ------------ OVERLAY PARA CERRAR MENÚ ------------ */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.4);
+    backdrop-filter: blur(3px);
+    display: none;
+    z-index: 500;
+}
+
+.overlay.show {
+    display: block;
+}

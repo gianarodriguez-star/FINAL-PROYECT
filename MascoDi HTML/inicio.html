@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MascoDi - Página de Inicio</title>
+  <link rel="stylesheet" href="diseño css/inicio.css">
+</head>
+
+<body>
+
+  <div class="hamburger" id="hamburgerBtn">
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+
+  <!-- menú desplegable -->
+  <div class="side-menu" id="sideMenu">
+      <button class="menu-btn">Registrar Mascota</button>
+      <button class="menu-btn">Mis Mascotas</button>
+      <button class="menu-btn">Calendario de Vacunas</button>
+      <button class="menu-btn">Encontrar Veterinarios</button>
+      <button class="menu-btn">Acerca de MascoDi</button>
+      <button class="menu-btn">Página de Inicio</button>
+  </div>
+
+  <div class="container-box">
+    <div class="content">
+      <div class="titulo-logo">
+       <img src="diseño css/logo.jpg" class="logo" alt="logo">
+       <h1 class="titulo"> MascoDi</h1>
+      </div>
+      <p>
+        ¡Bienvenido al Registro Digital para Mascotas!<br>
+        Donde podrás registrar, programar recordatorios de vacunas,
+        encontrar veterinarios y llevar un historial médico completo…<br>
+        ¡Todo en un solo lugar!
+      </p>
+      <button class="btn" onclick="location.href='inicio de sesion.html'">INICIAR SESIÓN</button>
+      <button class="btn">REGISTRARSE</button>
+    </div>
+  </div>
+
+  <script>
+    const hamburger = document.getElementById("hamburgerBtn");
+    const sideMenu = document.getElementById("sideMenu");
+    const overlay = document.getElementById("overlay");
+
+    // abre el menu de opciones al precionar
+    hamburger.addEventListener("click", () => {
+        sideMenu.classList.toggle("open");
+        overlay.classList.toggle("show");
+    });
+
+    // Cierra la pestaña al cliquear fuera 
+    overlay.addEventListener("click", () => {
+        sideMenu.classList.remove("open");
+        overlay.classList.remove("show");
+    });
+  </script>
+
+</body>
+</html>
